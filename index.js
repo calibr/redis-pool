@@ -87,7 +87,7 @@ RedisPool.prototype._createConnectionRaw = function(){
 		connection = Redis.createClient( config.redis.sock );
 	}
 	else{
-		connection = Redis.createClient( null, config.host );
+		connection = Redis.createClient( config.port || null, config.host );
 	}
 		
 	return connection;
